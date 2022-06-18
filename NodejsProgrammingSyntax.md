@@ -2,7 +2,7 @@
 
 Nodejs是弱数据类型，即变量属于哪种类型，必须赋值之后，才可以确认。
 
-```
+```javascript
 let score,names;
 score=50;
 names='Jarray'
@@ -11,11 +11,14 @@ console.log(score,names)
 
 显示结果
 
-![image-20220617232846664](img/image-20220617232846664.png)
+<span>![](img/image-20220617232846664.png#docx)</span>
+
+
+
 
 ## **数字**
 
-```
+```bash
 浮点数 3.14
 整数 1001
 科学计数法 123e5
@@ -23,14 +26,14 @@ console.log(score,names)
 
 数字表达式
 
-```
+```bash
 5 + 6
 5 * 10
 ```
 
 ## **字符串**
 
-```
+```javascript
 let str1 = 'Hello world' //单引号 
 let str2 = "hello world" //双引号
 let str3 = `hello world` //反引号
@@ -38,7 +41,7 @@ let str3 = `hello world` //反引号
 
 单引号与双引号无区别，建议使用单引号。同时反引号可以换行
 
-```
+```javascript
 let str4 = `hello 
 world `//反引号换行
 console.log(str4)
@@ -46,7 +49,7 @@ console.log(str4)
 
 字符串拼接，可以直接通过加号将两个字符串合并成一个字符串
 
-```
+```javascript
 let str1 = 'Hello world' //单引号 
 let str2 = "hello world" //双引号
 console.log(str1+str2)
@@ -54,28 +57,28 @@ console.log(str1+str2)
 
 显示结果
 
-![image-20220617233451699](img/image-20220617233451699.png)
+<span>![image-20220617233451699](img/image-20220617233451699.png)</span>
 
 ## 字符串属性与方法
 
-**字符串属性**
+### 字符串属性
 
+```javascript
+constructor 对创建该对象的函数的引用
+length      字符串的长度
+prototype   允许您向对象添加属性和方法
 ```
-constructor	对创建该对象的函数的引用
-length		字符串的长度
-prototype	允许您向对象添加属性和方法
-```
 
-**字符串方法**
+### 字符串方法
 
-+ concat()			连接两个或更多字符串，并返回新的字符串。
-+ charCodeAt()	返回在指定的位置的字符的 Unicode 编码。
-+ match()	查找找到一个或多个正则表达式的匹配。
-+ replace()	在字符串中查找匹配的子串，并替换与正则表达式匹配的子串。
-+ replaceAll()	在字符串中查找匹配的子串，并替换与正则表达式匹配的所有子串。
-+ slice()	提取字符串的片断，并在新的字符串中返回被提取的部分。
-+ split()	把字符串分割为字符串数组。
-+ trim()	去除字符串两边的空白。
++ concat()      连接两个或更多字符串，并返回新的字符串。
++ charCodeAt()  返回在指定的位置的字符的 Unicode 编码。
++ match()       查找找到一个或多个正则表达式的匹配。
++ replace()     在字符串中查找匹配的子串，并替换与正则表达式匹配的子串。
++ replaceAll()  在字符串中查找匹配的子串，并替换与正则表达式匹配的所有子串。
++ slice()       提取字符串的片断，并在新的字符串中返回被提取的部分。
++ split()       把字符串分割为字符串数组。
++ trim()        去除字符串两边的空白。
 
 ## 模板字符串/格式化字符串
 
@@ -86,7 +89,7 @@ prototype	允许您向对象添加属性和方法
 + 使用"`"，将字符串包起来；
 + 内容拼接变量时，使用`${}`包住变量
 
-```
+```javascript
 let name = "Jeff"
 let age = 20
 console.log(`${name} is ${age} years old`)
@@ -94,11 +97,11 @@ console.log(`${name} is ${age} years old`)
 
 结果查看
 
-![image-20220617235521862](img/image-20220617235521862.png)
+<span>![image-20220617235521862](img/image-20220617235521862.png)</span>
 
 ## 布尔
 
-```
+```javascript
 let isCool = true;
 let isHot = false; 
 ```
@@ -107,7 +110,7 @@ let isHot = false;
 
 undefined，是比较特殊的值。只有当只申明变量，不复制的情况下，变量默认值为undefined。
 
-**使用场景**
+### 使用场景
 
 我们在开发中经常申明一个变量，等带传送过来的数据；如果我们不知道这个数据是否传递过来，此时可以检测这个变量是否为undefined，就可以判定数据是否已经传递过来。
 
@@ -115,24 +118,24 @@ undefined，是比较特殊的值。只有当只申明变量，不复制的情�
 
 null表示值为空；
 
-**null与undefined的区别**
+### null与undefined的区别
 
 + undefined表示没有赋值；
 + null表示赋值了，但是内容为空；
 
-**使用场景**
+使用场景
 
 将null作为尚未创建的对象，即未来有变量中存放一个对象，但是对象并没有创建好，可以先设定为null。
 
 ## 数据类型检测与转换
 
-**数据类型检测**
+### 数据类型检测
 
 数据类型：`number`、`string`、`boolean`、`underfind`、`null`
 
 通过`typeof`关键字检测数据类型，通过typeof返回回来的就是这个数据类型的字符串.
 
-```
+```javascript
 let str1 = 'Hello world' //单引号 
 console.log(typeof str1=='string')
 ```
@@ -143,12 +146,12 @@ console.log(typeof str1=='string')
 
 也存在另外一种写法。
 
-```
+```javascript
 let str1 = 'Hello world' //单引号 
 console.log(typeof(str1))
 ```
 
-**数据类型转换**
+### 数据类型转换
 
 转换分为：
 
@@ -164,7 +167,7 @@ console.log(typeof(str1))
 
 加号作为正号解析可以转换为数字
 
-```
+```javascript
 console.log(1+ +"1")
 ```
 
@@ -174,11 +177,11 @@ console.log(1+ +"1")
 
 因为转换类型不明确，因此我们一般使用显式转换。
 
-**显式转换**
+### 显式转换
 
 通过关键字来对数据进行转换
 
-**转换为数字型**
+### 转换为数字型
 
 + Number(数据)
   + 转换为数字类型
@@ -205,9 +208,9 @@ console.log(1+ +"1")
 | 、   | 求商                                                 |
 | %    | 取模（取余数，开发中经常作为某个数字是否能够被整除） |
 
-**赋值运算符**
+### 赋值运算符
 
-```
+```javascript
 num+=1 ==>num=num+1
 num*=1
 num-=1
@@ -215,15 +218,15 @@ num/=1
 num%=1
 ```
 
-**一元运算符**
+### 一元运算符
 
-```
+```javascript
 let num = 1;
 ++num;
 num++;
 ```
 
-++num和num++的区别 	todo
+++num和num++的区别  todo
 
 ## 比较运算符
 
@@ -248,11 +251,11 @@ console.log('10'==10)
 console.log('10'===10)
 ```
 
-**结果显示**
+结果显示
 
 ![image-20220618011708797](img/image-20220618011708797.png)
 
-**字符串比较**
+### 字符串比较
 
 按照ASCII码进行比较
 
@@ -267,7 +270,7 @@ PS：
 
 + 不同类型直接比较会发送隐式转换
 
-```
+```javascript
 console.log(3 > '2') //true
 ```
 
@@ -279,7 +282,7 @@ console.log(3 > '2') //true
 | \|\| | 逻辑或 | 或者 | 两边有一个为true，结果为true |
 | ！   | 逻辑非 | 取反 | true变false，false变true     |
 
-**逻辑运算短路**
+### 逻辑运算短路
 
 短路：只存在于&&与||中，当满足一定的条件让右边的代码不执行，
 
@@ -290,7 +293,7 @@ console.log(3 > '2') //true
 
 原因：通过左边就能够得到整个式子的结果，因此没有必要再判断右边。距离
 
-```
+```javascript
 console.log( undefined || 0 ) //遇到这个，左边为假直接执行右边，最后结果为console.log( 0 ) 
 ```
 
@@ -298,7 +301,7 @@ console.log( undefined || 0 ) //遇到这个，左边为假直接执行右边，
 
 **`||`短路**
 
-```
+```javascript
 console.log(false && 20) // false
 console.log(5<4 && 20) // false
 console.log(undefined && 20) // undefined 
@@ -309,7 +312,7 @@ console.log(10 && 20) // 20
 
 **`&&`短路**
 
-```
+```javascript
 console.log(false || 20) // 20
 console.log(5<4 || 20) // 20
 console.log(undefined || 20) // 20 
@@ -318,9 +321,9 @@ console.log(0 || 20) // 20
 console.log(10 || 20) // 10
 ```
 
-**短路应用**
+短路应用
 
-```
+```javascript
 function func(x,y){
    return  x+y 
 }
@@ -336,17 +339,15 @@ console.log(func(),func1())
 
 ![image-20220618021357837](img/image-20220618021357837.png)
 
-
-
 # 数据结构
 
 ## 数组
 
 ## 数组操作
 
-**创建数组**
+## 创建数组
 
-```
+```javascript
 let arr = ["data1","data2","data3"]
 console.log(arr)
 // 数组总长度,这个是数组的一个属性
@@ -355,54 +356,54 @@ arr.length
 
 ## 数组增删改查
 
-**增加数组元素**——`arr.push('新增的内容')`
+### **增加数组元素**——`arr.push('新增的内容')`
 
 可以将一个或者多个元素添加到数组的末尾。并返回该数组的新长度
 
-```
+```javascript
 let newArrayLen = arr.push(元素1,元素2,...,元素n)
 console.log( newArrayLen ) //数组的新长度
 ```
 
-**增加数组元素**——`arr.unshift('新增的内容')`
+### 增加数组元素——`arr.unshift('新增的内容')`
 
 将一个或者多个元素添加到数组的开头，并返回数组的新长度
 
-```
+```javascript
 let newArrayLen = arr.unshift(元素1,元素2,...,元素n)
 console.log( newArrayLen ) //数组的新长度
 ```
 
-**删除元素**
+### 删除元素
 
-```
+```javascript
 let element = arr.pop()// 从数组中删除最后一个元素，并返回该元素的值
 arr.shift()
 arr.splice(起始位置，删除几个元素) // 删除多个元素，从起始位置开始，删除几个元素
 ```
 
-**改变元素**
+### 改变元素
 
-```
+```javascript
 arr[0] = "Data1"
 ```
 
-**获取元素**
+### 获取元素
 
-```
+```javascript
 arr[0]
 ```
 
-**访问数组**
+### 访问数组
 
-```
+```javascript
 let arr = ["data1","data2","data3"]
 let data1 = arr[0]
 ```
 
 数组可以由不同对象组成
 
-```
+```javascript
 arr[1] = Date.now;
 arr[2] = myFunction;
 arr[3] = "mydata"
@@ -410,17 +411,17 @@ arr[3] = "mydata"
 
 ## **数组对象方法**
 
-**属性**
+### 属性
 
-```
-arr.length	设置或返回数组元素的个数。
+```javascript
+arr.length  设置或返回数组元素的个数。
 ```
 
-**方法**
+### 方法
 
 连接数组
 
-```
+```javascript
 //连接两个数组
 let hege = ["Cecilie", "Lone"];
 let stale = ["Emil", "Tobias", "Linus"];
@@ -437,7 +438,7 @@ var family = parents.concat(brothers, children);
 
 检测数组元素是否都是符合要求--`Array.every()`
 
-```
+```javascript
 var ages = [32, 33, 16, 40];
 
 function checkAdult(age) {
@@ -452,7 +453,7 @@ console.log(ages.every(checkAdult))
 
 返回数组符合要求的子数组(`Array.filter()`)
 
-```
+```javascript
 var ages = [32, 33, 16, 40];
 
 function checkAdult(age) {
@@ -468,29 +469,28 @@ console.log(ages.filter(checkAdult))
 
 todo
 
+
 # 字面量、常量、变量
 
- **命名规则**
+命名规则
 
-- 不能使用关键字；
-- 只能使用下划线、字母、数字与$。且数字不能开头
-- 字母严格区分大小写，如Age和age是不同的变量
++ 不能使用关键字；
++ 只能使用下划线、字母、数字与$。且数字不能开头
++ 字母严格区分大小写，如Age和age是不同的变量
 
-**命名规范**
+命名规范
 
-- 起名要有意义
-- 遵循小驼峰命名法
-  - 第一个单词首字母小写，后面每个单词首字母大写；
++ 起名要有意义
++ 遵循小驼峰命名法
+  + 第一个单词首字母小写，后面每个单词首字母大写；
 
+## 常量
 
+## 变量
 
-# 常量
+在编程语言中，变量用于存储数据值。Nodejs 使用关键字 **var** 和**let**来定义变量，
 
-# 变量
-
-在编程语言中，变量用于存储数据值。Nodejs 使用关键字 **var** 和**let**来定义变量， 
-
-```
+```javascript
 let age = "18 years"
 let age2
 age2 = "20 years"
@@ -501,7 +501,7 @@ console.log(age3)
 
 ![image-20220617215003812](img/image-20220617215003812.png)
 
-# var、let 和 const 辨析
+## var、let 和 const 辨析
 
 ES2015（ES6）推出了许多闪亮的新功能。从 2020 年开始，我们假设许多 JavaScript 开发人员已经熟悉并开始使用这些功能。
 
@@ -657,8 +657,8 @@ console.log(greeting); // "say Hi"
 就像`var`一样，`let`声明也被提升到作用域顶部。
 但不同的是:
 
-- 用`var`声明的变量会被提升到其作用域的顶部，并使用 undefined 值对其进行初始化。
-- 用`let`声明的变量会被提升到其作用域的顶部，不会对值进行初始化。
++ 用`var`声明的变量会被提升到其作用域的顶部，并使用 undefined 值对其进行初始化。
++ 用`let`声明的变量会被提升到其作用域的顶部，不会对值进行初始化。
 
 因此，如果你尝试在声明前使用`let`变量，则会收到`Reference Error`。
 
@@ -720,14 +720,14 @@ greeting.message = 'say Hello instead';
 
 最后，我们总结一下它们的异同：
 
-- `var`声明是全局作用域或函数作用域，而`let`和`const`是块作用域。
-- `var`变量可以在其范围内更新和重新声明； `let`变量可以被更新但不能重新声明； `const`变量既不能更新也不能重新声明。
-- 它们都被提升到其作用域的顶端。但是，虽然使用变量`undefined`初始化了`var`变量，但未初始化`let`和`const`变量。
-- 尽管可以在不初始化的情况下声明`var`和`let`，但是在声明期间必须初始化`const`。
++ `var`声明是全局作用域或函数作用域，而`let`和`const`是块作用域。
++ `var`变量可以在其范围内更新和重新声明； `let`变量可以被更新但不能重新声明； `const`变量既不能更新也不能重新声明。
++ 它们都被提升到其作用域的顶端。但是，虽然使用变量`undefined`初始化了`var`变量，但未初始化`let`和`const`变量。
++ 尽管可以在不初始化的情况下声明`var`和`let`，但是在声明期间必须初始化`const`。
 
-# 总结
+## 总结
 
-| 	   | var  | let  | const |
+| 含义   | var  | let  | const |
 | ---- | ---- | ---- | ----- |
 | 作用域 | 全局 | 块（一个花括号内） | 块（一个花括号内） |
 | 重定义与可修改 | 重定义与可修改 | 不可重定义但可修改 | 不可重定义不可修改 |
@@ -753,15 +753,15 @@ greeting.message = 'say Hello instead';
 
 **单分支if语句**
 
-```
+```javascript
 if (Boolean) {
-	todo
+  todo
 }
 ```
 
 **双分支语句**
 
-```
+```javascript
 if (Boolean) {
 	todo
 } else {
@@ -771,7 +771,7 @@ if (Boolean) {
 
 **多分支语句**
 
-```
+```javascript
 if (条件1) {
 	todo
 } else if (条件2) {
@@ -785,13 +785,13 @@ if (条件1) {
 
 ### 三元运算符（三元表达式）
 
-```
+```javascript
 condition ? exprIfTrue : exprIfFalse
 ```
 
 等价于
 
-```
+```javascript
 if ( condition ) {
 	exprIfTrue
 } else {
@@ -803,14 +803,14 @@ if ( condition ) {
 
 举例
 
-```
+```javascript
 console.log(true ? 1 : 2) // 1
 console.log(false ? 1 : 2) //2
 ```
 
 ### switch分支
 
-```
+```javascript
 switch(expression)
 {
     case 1:
@@ -823,12 +823,13 @@ switch(expression)
         与 case 1 和 case 2 不同时执行的代码
 }
 ```
+
 **PS**注意点:
 
 + switch case语句一般用作等值判断，不适用于区间判断；
 + switch case一般需要配置break关键字，否则会导致case击穿；
 
-```
+```javascript
 let d=new Date().getDay();
 let x=null;
 switch (d)
@@ -864,7 +865,7 @@ console.log(x)
 
 代码
 
-```
+```javascript
 while (循环条件) {
 	todo(循环体)
 }
@@ -872,7 +873,7 @@ while (循环条件) {
 
 循环三要素代码
 
-```
+```javascript
 let i = 1;
 while (i <=3) {
 	console.log(i)
@@ -882,9 +883,9 @@ while (i <=3) {
 
 ### for循环
 
-**for单体**
+**for 单体**
 
-```
+```javascript
 for ([initialization]; [condition]; [final-expression])
    statement
 ```
@@ -940,7 +941,7 @@ for (;;) {
 
 **for...in**, 循环遍历对象的属性
 
-```
+```javascript
 const object = { a: 1, b: 2, c: 3 };
 
 for (const property in object) {
@@ -951,12 +952,11 @@ for (const property in object) {
 // "a: 1"
 // "b: 2"
 // "c: 3"
-
 ```
 
 **for...of**,循环遍历数组内容
 
-```
+```javascript
 const array1 = ['a', 'b', 'c'];
 
 for (const element of array1) {
@@ -970,7 +970,7 @@ for (const element of array1) {
 
 除了遍历const常量，也可以遍历变量数组。
 
-```
+```javascript
 let array1 = ['a','b','c','d' ]
 for ( let element of array1) {
    console.log(element)
