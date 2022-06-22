@@ -155,3 +155,135 @@ main入口，如下图所示。
 
 # 发布包
 
+## 包的功能
+
+编写一个包，这个包的功能有如下：
+
++ 格式化日期
+
+  ```javascript
+  const shuaitools = require('shuaitools')
+  const dt = shuaitools.dataFormat(new Data())
+  console.log(dt) // 输出 2022-06-22 10:09:45
+  ```
+
++ 转移html中的特殊字符
+
+  ```javascript
+  const shuaitools = require('shuaitools')
+  const htmlStr = '<h1 style="color: red;"你好!&copy;<span>小黄!</span></h1>'
+  const str = shuaitools.htmlEscape(htmlStr)
+  console.log(str)//&lt;h1 style=&quot: red;&quot;&gt...
+  ```
+
+## 初始化包的基本结构
+
+包的代码地址:
+
+```
+https://github.com/jsabook/githubPic
+```
+
+包的结构说明，shuaitools结构说明：
+
+ ```bash
+ ├── index.js
+ ├── package.json 
+ └── README.md 
+ ```
+
+```
+├── index.js  //包的入口文件
+├── package.json //包管理配置文件
+├── README.md //包的说明文档
+└── src
+    ├── dateFormat.js
+    └── htmlEscape.js
+```
+
+## 发布包
+
+### 注册网站
+
+登录npmjs.com 注册网站
+
+![image-20220622224926298](img/image-20220622224926298.png)
+
+## 终端登录
+
+```bash
+npm login
+```
+
+内容如下
+
+```bash
+root@centos7 Nodejs]# npm login
+npm notice Log in on https://registry.npmjs.org/
+Username: <your username>
+Password: 
+Email: (this IS public) < your email>
+npm notice Please check your email for a one-time password (OTP)
+Enter one-time password: <otp number>
+Logged in as npmwjshuai on https://registry.npmjs.org/.
+```
+
+## 发布包
+
+```
+npm publish
+```
+
+发布成功，显示
+
+![image-20220622225448776](img/image-20220622225448776.png)
+
+
+
+包的地址
+
+```
+https://www.npmjs.com/package/wjshuai-tools
+```
+
+## 删除已经发布的包
+
+
+
+72小时以内删除
+
+```bash
+npm unpublish 
+```
+
+# 包加载机制
+
+模块在第一次加载后会被缓存，这意味着多次调用require()不会导致代码被执行多次。无论内置模块、用户自定义模块还是第三方模块，他们都会优先从缓存中加载，从而提高模块的加载效率。
+
+## 内置模块的加载机制
+
+内置模块是由Node.js官方提供的模块，内置模块的加载优先级是最高的。
+
+## 自定义模块加载机制
+
+使用require()加载自定义模块时，必须指定./或者../开始的路径标识符。如果没有这个路径标识符，node.js则会将其当作内置模块或者第三方模块进行加载。
+
+## 第三方模块的加载机制
+
+
+
+如果在当前目录没有找到对应的第三方模块，则移动再上一层父目录进行加载，直至文件系统根目录。以`/home/centos/project/foo.js`调用require('tools'),则查找顺序如下：
+
++ `/home/centos/project/node_modules/tools`
++ `/home/centos//node_modules/tools`
++ `/home/node_modules/tools`
++ `node_modules/tools`
++ 找不到，直接报错。
+
+## 目录模块查找
+
+当把目录作为模块标识符，传递给require()进行加载的时候，有三种查找方式。
+
++ 在被加载的目录中查找package.json文件中的main属性的值，作为require()的参数；
++ 如果目录里面没有package.json文件或者main入口，则node则会尝试加载目录下的index.js；
++ 如果上面两步都失败了，则会在终端中打印出找不到模块的报错；
