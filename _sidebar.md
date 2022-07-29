@@ -6,11 +6,17 @@
   - [Nodejs 对象](NodejsObject.md)
   - [Nodejs函数](NodejsFunction.md)
 - [ES6特性]()
+  - [变量特性](es6first.md)
+  - [函数特性](es6Function.md)
+  - [数据结构特性](DataStruct.md)
+    - [Async编程](Async.md)
+    - [Generator语法](Generator.md)
+    - [Promise承诺](Promise.md)
+  - [异步编程]()
 - [Node内置模块](Nodemodules.md)
   - [文件处理模块](NodeFileOpration.md)
   - [HTTP模块](NodeHttpModule.md)
 - [模块化]()
-  
   - [模块化说明](NodeModuleIntrudc.md)
   - [包说明](NodejsNpmIntro.md)
 - [Nodejs web开发]()
@@ -20,10 +26,10 @@
   - [身份认证](NodejsSecrity.md)
 - 登录体系介绍
   - [Jwt协议登录](Jwt.md)
-  
+
   - Oauth2.0协议登录
 - [Nodejs examples]()
   - [Nodejs RestAPI](NodejsRestAPI.md)
-  - Nodejs 分布式登录系统
+  - [Nodejs 分布式登录系统](DistributedLogin.md)
   - [Nodejs Oauth2.0集成认证]
   - Nodejs SSO单点登录(集成JWT与Oauth2.0)
